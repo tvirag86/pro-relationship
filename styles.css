@@ -410,11 +410,11 @@ h3{
   opacity: .9;
 }
 
-
 .about-intro{
   max-width: 720px;
   margin: 0 auto 48px;
   text-align: center;
+  margin-top: 30px;
 }
 
 .about-subtitle{
@@ -422,7 +422,6 @@ h3{
   margin-bottom: 36px;
 }
 
-/* 3 oszlopos feature blokk */
 .about-features{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -460,6 +459,82 @@ h3{
   border-radius: 999px;
   padding: 20px 15px;
   font-weight: 500;
+}
+
+#author { 
+   margin-top: 30px;
+}
+
+.author-box {
+margin-top: 46px;
+background: rgba(42, 26, 47, .76);
+    padding: 31px;
+    border-radius: 18px;
+color: #e6dcd2;
+}
+.author-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 56px;
+
+}
+
+.author-media {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.35);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+  height: clamp(520px, 42vw, 620px);
+}
+
+.author-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  border-radius: 24px;
+}
+
+.author-media::after{
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 18px;
+  border: 1px dotted rgba(212, 175, 55, 0.55);
+  pointer-events: none;
+}
+
+.author-text-gold {
+ color: var(--gold);
+}
+.author-content,
+.author-text {
+  max-width: 540px;
+  line-height: 1.9;
+}
+.author-content {
+ padding: 6px 0;
+ text-shadow:0 1px 0 rgba(0,0,0,0.15);
+ font-weight:300;
+}
+
+
+@media (max-width: 900px) {
+  .author-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .author-image {
+    max-height: 360px;
+  }
+
+  #author-text.about-intro {
+    text-align: left;
+  }
 }
 /* =========================
    Nehany minta

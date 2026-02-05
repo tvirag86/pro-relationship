@@ -40,7 +40,7 @@
   document.querySelectorAll("[data-cta]").forEach((a) => {
     a.addEventListener("click", (e) => {
       e.preventDefault();
-      alert("Payhip link ide (placeholder).");
+      alert("Coming soon");
     });
   });
 })();

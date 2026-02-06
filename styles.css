@@ -256,12 +256,18 @@ h2 {
 }
 
 .lead{
-  margin: 0 0 18px;
+  margin-top: 20px;
+margin-bottom: 20px;
   color: var(--mist);
   max-width: 62ch;
 }
 
-.cta{ display:flex; gap: 10px; flex-wrap: wrap; }
+.cta{ 
+display:flex; 
+gap: 10px; 
+flex-wrap: wrap;
+  margin-top: 30px;
+ }
 
 /* Header bottom wave  */
 .header-wave{
@@ -522,20 +528,26 @@ color: #e6dcd2;
 }
 
 
-@media (max-width: 900px) {
-  .author-grid {
+@media (max-width: 768px){
+
+  .author-grid{
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 32px;
   }
 
-  .author-image {
-    max-height: 360px;
+  .author-media{
+    height: auto;
+    min-height: unset;
   }
 
-  #author-text.about-intro {
-    text-align: left;
+  .author-media img{
+    height: auto;
+    max-height: none;
+    object-fit: cover;
   }
+
 }
+
 /* =========================
    Nehany minta
 ========================= */

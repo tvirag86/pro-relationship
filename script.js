@@ -43,4 +43,34 @@
       alert("Coming soon");
     });
   });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("sampleForm");
+  const msg  = document.getElementById("formMsg");
+
+  if (!form) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const emailInput = form.querySelector("#email");
+    const email = emailInput.value.trim();
+
+    if (!email) {
+      msg.textContent = "Kérlek add meg az email címed.";
+      return;
+    }
+
+
+    msg.textContent = "Ellenőrzés… átirányítás…";
+
+    const payhipUrl =
+      "https://store.pro-relationship.com/b/parkapcsolatijikingingyenes?email="+
+  encodeURIComponent(email);
+
+
+    window.location.href = payhipUrl;
+  });
+});
+
 })();

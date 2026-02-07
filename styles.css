@@ -183,7 +183,7 @@ h2 {
   color: var(--lavender);
   padding: 10px 12px;
   font-weight: 800;
-  border-radius: 0;
+  border-radius: 5px;
 }
 
 /* HERO */
@@ -761,7 +761,7 @@ text-align: center;
 
 /* "AJÁNLOTT" badge a kiemelt csomaghoz */
 #csomagok .card:nth-child(2)::before{
-  content:"AJÁNLOTT";
+  content:"HAMAROSAN";
   position:absolute;
   top: 16px;
   right: 18px;
@@ -1025,6 +1025,14 @@ text-align: center;
   .form-image{
     display: none; /* ahogy korábban kérted */
   }
+}
+
+
+.btn-disabled{
+  pointer-events:none;     /* ne lehessen kattintani */
+  opacity:.55;             /* halványabb */
+  cursor:not-allowed;      /* tiltott kurzor */
+  filter:grayscale(.2);   /* finom fakítás */
 }
 
 

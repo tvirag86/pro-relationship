@@ -707,7 +707,7 @@ text-align: center;
     max-width: 66ch;
 }
 
-/* grid2 – ha már van, ez csak finomítja */
+
 #csomagok .grid2{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -730,21 +730,21 @@ text-align: center;
   opacity: .65;
 }
 
-/* 2. csomag: erősebb stripe + badge */
+
 #csomagok .card:nth-child(2)::after{
   opacity: .95;
 }
 
-/* Csomagnév: legyen igazán hangsúlyos */
+
 #csomagok .card h3{
   font-size: clamp(22px, 2vw, 28px);
   font-weight: 900;
   letter-spacing: .2px;
-  margin-top: 8px; /* stripe miatt */
+  margin-top: 8px; 
   margin-bottom: 12px;
 }
 
-/* A cím alatt egy finom divider (design + ritmus) */
+
 #csomagok .card h3::after{
   content:"";
   display:block;
@@ -759,7 +759,7 @@ text-align: center;
   background: rgba(201,178,125,.55);
 }
 
-/* "AJÁNLOTT" badge a kiemelt csomaghoz */
+
 #csomagok .card:nth-child(2)::before{
   content:"HAMAROSAN";
   position:absolute;
@@ -775,13 +775,11 @@ text-align: center;
   font-size: 12px;
 }
 
-/* Ár: legyen kicsit nagyobb és nyugodtabb */
 #csomagok .price{
   font-size: clamp(28px, 2.6vw, 42px);
   letter-spacing: -0.6px;
 }
 
-/* Lista: gold pipák, levegős sorok */
 #csomagok ul{
   list-style: none;
   padding: 0;
@@ -1023,16 +1021,16 @@ text-align: center;
   }
 
   .form-image{
-    display: none; /* ahogy korábban kérted */
+    display: none; 
   }
 }
 
 
 .btn-disabled{
-  pointer-events:none;     /* ne lehessen kattintani */
-  opacity:.55;             /* halványabb */
-  cursor:not-allowed;      /* tiltott kurzor */
-  filter:grayscale(.2);   /* finom fakítás */
+  pointer-events:none;     
+  opacity:.55;             
+  cursor:not-allowed;     
+  filter:grayscale(.2);   
 }
 
 

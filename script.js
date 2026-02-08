@@ -20,23 +20,34 @@
     toggle?.setAttribute("aria-expanded", "false");
   });
 
-  // form demo
+  // --- Lead magnet form -> Payhip redirect ---
   const form = document.getElementById("sampleForm");
   const msg = document.getElementById("formMsg");
 
   form?.addEventListener("submit", (e) => {
     e.preventDefault();
-    const email = document.getElementById("email");
-    const v = (email?.value || "").trim();
-    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+
+    const emailInput = form.querySelector("#email");
+    const email = (emailInput?.value || "").trim();
+    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 
     if (!msg) return;
-    msg.textContent = ok
-      ? "Köszönöm! A kért részletet elküldtem a megadott e-mail címre."
-      : "Kérlek, adj meg egy érvényes email címet.";
+
+    if (!ok) {
+      msg.textContent = "Kérlek, adj meg egy érvényes email címet.";
+      return;
+    }
+
+    msg.textContent = "Köszönöm! Átirányítalak…";
+
+    const payhipUrl =
+      "https://store.pro-relationship.com/b/parkapcsolatijikingingyenes?email=" +
+      encodeURIComponent(email);
+
+    window.location.href = payhipUrl;
   });
 
-  // buy buttons placeholder
+  // buy buttons placeholder (ha kell, maradhat)
   document.querySelectorAll("[data-cta]").forEach((a) => {
     a.addEventListener("click", (e) => {
       e.preventDefault();
@@ -44,33 +55,20 @@
     });
   });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("sampleForm");
-  const msg  = document.getElementById("formMsg");
+  // --- Cookie banner ---
+  const banner = document.getElementById("cookieBanner");
+  const btn = document.getElementById("acceptCookiesBtn");
 
-  if (!form) return;
+  const hideBanner = () => {
+    if (banner) banner.style.display = "none";
+  };
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  if (localStorage.getItem("cookiesAccepted") === "true") {
+    hideBanner();
+  }
 
-    const emailInput = form.querySelector("#email");
-    const email = emailInput.value.trim();
-
-    if (!email) {
-      msg.textContent = "Kérlek add meg az email címed.";
-      return;
-    }
-
-
-    msg.textContent = "Ellenőrzés… átirányítás…";
-
-    const payhipUrl =
-      "https://store.pro-relationship.com/b/parkapcsolatijikingingyenes?email="+
-  encodeURIComponent(email);
-
-
-    window.location.href = payhipUrl;
+  btn?.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "true");
+    hideBanner();
   });
-});
-
 })();

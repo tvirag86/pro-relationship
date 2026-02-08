@@ -213,7 +213,39 @@ h2 {
   max-width: 100%;
 }
 
+/* MOBIL BOOK*/
+.hero-book-mobile {
+  display: none;
+}
 
+@media (max-width: 768px) {
+
+  .hero-book-mobile {
+   display: flex;
+    justify-content: center;   /* vízszintes közép */
+    align-items: center;
+    margin: 28px 0 16px;
+  }
+
+  .cover-mobile {
+    width: 240px;
+    max-width: 85%;
+    height: auto;
+    border-radius: 18px;
+
+    box-shadow:
+      0 20px 40px rgba(0,0,0,.25),
+      0 0 0 1px rgba(212,175,55,.35); /* gold keret */
+  }
+
+.hero-title {
+text-align: center;
+}
+
+.tagline {
+text-align: center;
+}
+}
 
 /* Meta */
 .meta{
@@ -353,7 +385,12 @@ flex-wrap: wrap;
 ========================= */
 .main{ background: var(--base); }
 
-
+#mi-ez,
+#mintak,
+#reszlet,
+#csomagok {
+  scroll-margin-top: 120px;
+}
 
 h2{ 
 	margin: 0 0 12px;
@@ -383,7 +420,9 @@ h3{
   padding: 18px;
   background: rgba(255,255,255,.35);
 }
-.price{ font-weight: 800; color: var(--navy); }
+.price{ font-weight: 800; 
+color: var(--navy); 
+}
 
 /* Keywords */
 .keywords span{
@@ -760,8 +799,22 @@ text-align: center;
 }
 
 
+#csomagok .card:nth-child(1)::before{
+  content:"BEVEZETŐ ÁR";
+  position:absolute;
+  top: 16px;
+  left: 18px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(201,178,125,.18);
+  border: 1px solid rgba(201,178,125,.55);
+  color: rgba(11,31,58,.90);
+  font-weight: 900;
+  letter-spacing: .6px;
+  font-size: 12px;
+}
 #csomagok .card:nth-child(2)::before{
-  content:"HAMAROSAN";
+  content:"HAMAROSAN...";
   position:absolute;
   top: 16px;
   right: 18px;
@@ -860,6 +913,22 @@ text-align: center;
 text-align: center;
 }
 
+/* Premium SOON 
+========================= */
+.article-premium-soon .price-soon{
+color: grey;
+  font-size: clamp(28px, 2.6vw, 42px);
+  letter-spacing: -0.6px;
+font-weight: 800;
+}
+
+#article-premium-h3
+ {
+color: grey;
+}
+/*========================= */
+
+
 /* Mobil */
 @media (max-width: 900px){
   #csomagok .grid2{
@@ -918,8 +987,7 @@ text-align: center;
 /* link stílus */
 .site-footer a{
   color: var(--gold);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
 }
 
 .site-footer a:hover{
@@ -1032,5 +1100,90 @@ text-align: center;
   cursor:not-allowed;     
   filter:grayscale(.2);   
 }
+
+
+
+/* LEGAL PAGES */
+
+.legal-page {
+  font-family: Inter, sans-serif;
+  background: #f6f2f6;
+  padding: 60px 20px;
+}
+
+.legal-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  line-height: 1.7;
+}
+
+.legal-container h1 {
+  margin-bottom: 20px;
+}
+
+.legal-container h2 {
+  margin-top: 30px;
+}
+
+/* COOKIES*/
+
+.cookie-banner{
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: calc(100% - 40px);
+  max-width: 900px;
+
+  background: rgba(62, 45, 74, 0.96);   /* lila */
+  backdrop-filter: blur(12px);
+
+  color: #fff;
+  padding: 18px 22px;
+
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  z-index: 99999;
+
+  border: 1px solid rgba(212,175,55,0.35); /* arany */
+}
+
+.cookie-banner a{
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cookie-banner a:hover{
+  text-decoration: underline;
+}
+
+@media (max-width: 768px){
+
+  .cookie-banner{
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    bottom: 16px;
+  }
+
+  #acceptCookiesBtn{
+    width: 100%;
+  }
+}
+
+
+
+
 
 

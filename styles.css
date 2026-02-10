@@ -695,8 +695,8 @@ text-align: center;
    FORM
 ========================= */
 
-.form-container {
-
+.form-muted {
+margin-bottom: 35px;
 }
 
 .form label{ display:block; margin-bottom: 8px; }
@@ -1181,6 +1181,7 @@ color: grey;
     width: 100%;
   }
 }
+
 
 
 

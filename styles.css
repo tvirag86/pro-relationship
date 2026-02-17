@@ -800,7 +800,6 @@ margin-bottom: 35px;
 
 
 #csomagok .card:nth-child(1)::before{
-  content:"BEVEZETŐ ÁR";
   position:absolute;
   top: 16px;
   left: 18px;

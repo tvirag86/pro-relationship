@@ -1177,6 +1177,72 @@ text-align: center;
   }
 }
 
+.cta-trust {
+  margin-top: 10px;
+  font-size: 0.92rem;          
+  line-height: 1.35;
+  color: rgba(0, 0, 0, 0.62);  
+  text-align: center;      
+}
+
+.cta-trust .icon {
+  margin-right: 6px;
+  font-size: 1em;
+  vertical-align: -1px;
+  opacity: 0.9;
+}
+
+.cta-trust .sub {
+  display: block;
+  margin-top: 3px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 480px) {
+  .cta-trust {
+    font-size: 0.9rem;
+    margin-top: 8px;
+    padding: 0 10px;
+  }
+}
+
+/* Lead magnet trust text (Payhip notice) */
+.lead-trust {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #e1bdb3; 
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.lead-trust .icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+  vertical-align: -2px;
+  opacity: 0.9;
+}
+
+.lead-trust .sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+@media (max-width: 480px) {
+  .lead-trust {
+    font-size: 0.9rem;
+    padding: 0 12px;
+  }
+}
+
+.lead-trust-main{
+  text-align: left;
+}
+
 
 
 

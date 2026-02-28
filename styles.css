@@ -240,35 +240,7 @@ h2 {
 }
 
 
-@media (max-width: 768px) {
 
-  .hero-book-mobile {
-    display: flex;
-    justify-content: center;
-    /* vízszintes közép */
-    align-items: center;
-    margin: 28px 0 16px;
-  }
-
-  .cover-mobile {
-    width: 240px;
-    max-width: 85%;
-    height: auto;
-    border-radius: 18px;
-
-    box-shadow:
-      0 20px 40px rgba(0, 0, 0, .25),
-      0 0 0 1px rgba(212, 175, 55, .35);
-  }
-
-  .hero-title {
-    text-align: center;
-  }
-
-  .tagline {
-    text-align: center;
-  }
-}
 
 /* Meta */
 .meta {
@@ -358,12 +330,12 @@ opacity: .92;
   text-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
-#hero-title-element {
+/* #hero-title-element {
  color: #c89b8e;
  font-weight: 400;
 font-family: "Poppins", sans-serif;
 
-}
+} */
 
 .hero-brand {
   font-family: "Playfair Display", sans-serif;
@@ -1084,7 +1056,7 @@ h3 {
 }
 
 #csomagok .btn.btn-premium {
-  background: var(--plum-bg);
+  background: var(--navy);
   color: var(--gold);
   border: 1px solid rgba(231, 195, 182, 0.45);
 }
@@ -1290,9 +1262,7 @@ h3 {
     grid-template-columns: 1fr;
     gap: 28px;
   }
-}
 
-@media (max-width: 900px) {
   .form-wrapper {
     grid-template-columns: 1fr;
   }
@@ -1300,6 +1270,10 @@ h3 {
   .form-image {
     display: none;
   }
+}
+
+@media (max-width: 780px) {
+
 }
 
 
@@ -1545,7 +1519,6 @@ margin-bottom: 50px;
   font-weight: 700;
 }
 
-@media (max-width:980px){ .pp-grid{ grid-template-columns:1fr; gap:18px; } .pp-copy{ border-left:none; padding-left:0; } }
 
 @media (max-width: 980px){
   .pp-grid{
@@ -1557,7 +1530,7 @@ margin-bottom: 50px;
   }
 
   .pp-ill{
-    max-width: 100%;
+    max-width: 40%;
     height: auto;          /* tartja az arányt */
     margin-inline: auto;
   }
@@ -1701,4 +1674,105 @@ margin-bottom: 50px;
   #exitOverlay .exit-modal {
     transition: none;
   }
+}
+
+/* =========================
+   RESPONSIVE 768px
+========================= */
+
+@media (max-width: 768px) {
+
+  .hero-book-mobile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 28px 0 16px;
+  }
+
+  .cover-mobile{
+    width: 280px;
+    max-width: 85%;
+    height: auto;
+    border-radius: 18px;
+    box-shadow:
+      0 20px 40px rgba(0,0,0,.25),
+      0 0 0 1px rgba(212,175,55,.35);
+  }
+
+  /* Dekor vonal mobilon ki */
+  .hero-copy::before{ display: none; }
+
+  /* Középre az egész hero szövegblokk */
+  .hero-copy{
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  /* H1 biztos középre + ne legyen 14ch */
+  .hero-title{
+    text-align: center;
+    max-width: none;
+    width: 100%;            
+    margin: 0 auto 12px;
+  }
+
+  .hero-brand{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .hero-lead{
+    text-align: center;
+    color: rgba(255,255,255,.90);
+  }
+
+  .hero-note{
+    color: rgba(255,255,255,.72);
+  }
+
+  /* Kicker középre + pill elrejtése */
+  .hero-kicker{
+    justify-content: center;
+  }
+  .hero-kicker .pill{ display: none; }
+
+  /* hero-title-brand padding felülírás (elég egyszer, ne duplázd) */
+  .hero-title-brand{
+    position: relative;
+    padding: 20px;          /* ez írja felül a desktop 36px-et */
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  /* Mobil-only vízszintes díszvonal */
+  .hero-title-brand::after{
+    content: "";
+    display: block;
+    height: 2px;
+    width: min(220px, 70%);
+    margin: 12px auto 0;
+    border-radius: 999px;
+    background: linear-gradient(
+      to right,
+      rgba(201,164,125,0),
+      rgba(201,164,125,.95) 35%,
+      rgba(201,164,125,.15)
+    );
+  }
+
+  /* Gombok középre, egymás alá */
+  .hero-cta{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .hero-cta .btn{
+    width: min(360px, 100%);
+  }
+
+  .tagline{ text-align: center; }
+
+/* Szerzotol rész kiszedve */
+.author-box{ display: none; }
+
 }

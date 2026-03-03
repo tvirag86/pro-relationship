@@ -2122,6 +2122,10 @@ font-style: oblique;
   color: rgba(239,230,243,.70);
 }
 
+#kapcsolat textarea{
+  resize: none;
+}
+
 /* Mobil */
 @media (max-width: 900px){
   #kapcsolat.contact-block{ padding: 28px 0; }

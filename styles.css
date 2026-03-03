@@ -828,7 +828,7 @@ h3 {
 
 .section-alt {
   background: var(--plum-bg);
-  padding-bottom: 30px;
+  padding-bottom: 1px;
 }
 
 /* Section divider wave */
@@ -899,6 +899,60 @@ h3 {
 .form-image img {
   border-radius: 22px;
 }
+
+.form-wrapper-container{
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  background: #a5878b;
+  padding: clamp(28px, 4vw, 56px) 0;
+}
+
+
+.form-wrapper{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px;
+  border-radius: 26px;
+
+
+  background: radial-gradient(120% 140% at 20% 20%, rgba(255,255,255,.08) 0%, rgba(255,255,255,.04) 55%, rgba(255,255,255,.02) 100%),
+              linear-gradient(180deg, #2b1731 0%, #241028 100%);
+  border: 1px solid rgba(234, 214, 195, .35);
+  box-shadow: 0 18px 55px rgba(0,0,0,.35);
+}
+
+
+.form-wrapper{
+  outline: 2px dotted rgba(234, 214, 195, .35);
+  outline-offset: -10px;
+}
+
+
+.form-wrapper h2{
+  color: #e9d8c6;
+  letter-spacing: .04em;
+}
+.form-wrapper .form-muted{
+  color: rgba(255,255,255,.82);
+}
+.btn-form{
+  background: #e9d8c6;
+  color: #2b1731;
+  border: 1px solid rgba(255,255,255,.25);
+}
+.btn-form:hover{
+  filter: brightness(.97);
+}
+
+
+@media (max-width: 900px){
+  .form-wrapper{ outline-offset: -6px; border-radius: 20px; }
+}
+
+
 
 /* =========================
    PRICING / CSOMAGOK
@@ -984,7 +1038,7 @@ h3 {
 }
 
 #csomagok .card:nth-child(2)::before {
-  content: "AJÁNLOTT";
+  content: "LEGNÉPSZERŰBB";
   position: absolute;
   top: 16px;
   right: 18px;
@@ -1126,6 +1180,7 @@ h3 {
   height: 180px;
   margin: 0;
   line-height: 0;
+background: #ecdee4;
 }
 
 .footer-wave path {
@@ -1776,3 +1831,301 @@ margin-bottom: 50px;
 .author-box{ display: none; }
 
 }
+
+
+/* TESTIMONIAL */
+
+.testimonials{
+  margin: 26px auto;
+  max-width: 980px;
+  padding: 0 16px;
+}
+
+#testimonials-title {
+  margin-top: 50px !important;
+}
+
+.testimonials-inner h2{
+text-align: center;
+}
+.testimonials-subtitle{
+  margin: 0 0 14px;
+  opacity: .85;
+text-align: center;
+}
+.testimonial-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.t-card{
+  margin: 0;
+  padding: 16px 16px 14px;
+  background: #e7c3b659;
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+}
+.t-card blockquote{
+  margin: 0 0 10px;
+  line-height: 1.55;
+  opacity: .92;
+font-style: oblique;
+}
+.t-card figcaption{
+  font-size: 14px;
+  opacity: .7;
+}
+.t-trust{
+  margin-top: 12px;
+  padding: 12px 14px;
+
+}
+.t-trust-line{
+  margin: 0;
+  font-size: 14px;
+  opacity: .85;
+}
+
+.t-card blockquote,
+.t-card figcaption,
+.testimonials-subtitle{
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.55),          /* “talp” */
+    0 2px 10px rgba(0,0,0,.35),       /* lágy mélység */
+    -1px 0 0 rgba(0,0,0,.55),         /* bal */
+    1px 0 0 rgba(0,0,0,.55),          /* jobb */
+    0 -1px 0 rgba(0,0,0,.55),         /* fent */
+    0 1px 0 rgba(0,0,0,.55);          /* lent */
+}
+
+@media (max-width: 900px){
+  .testimonial-grid{ grid-template-columns: 1fr; }
+}
+
+
+
+
+/* CHEVRON */
+
+.section-cue{
+  position: relative;
+  height: 56px;
+  margin: 10px 0 14px;
+}
+
+/* középre igazítás */
+.section-cue::before,
+.section-cue::after{
+  content:"";
+  position:absolute;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+
+  /* chevron rajzolás */
+  border-right: 3px solid rgba(233, 216, 198, .75);
+  border-bottom: 3px solid rgba(233, 216, 198, .75);
+  border-radius: 3px;              /* picit „puhább” sarok */
+  transform: translateX(-50%) rotate(45deg);
+
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.25));
+  opacity: .9;
+}
+
+.section-cue::before{
+  top: 10px;
+  animation: chevronDown 1.6s ease-in-out infinite;
+}
+
+.section-cue::after{
+  top: 24px;
+  opacity: .55;                    /* a második halványabb */
+  animation: chevronDown 1.6s ease-in-out infinite;
+  animation-delay: .12s;
+}
+
+@keyframes chevronDown{
+  0%, 100% { transform: translateX(-50%) translateY(0) rotate(45deg); }
+  50%      { transform: translateX(-50%) translateY(8px) rotate(45deg); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .section-cue::before,
+  .section-cue::after{ animation: none; }
+}
+
+/* =========================
+   CONTACT – FINAL (GitHub Pages + Formspree)
+   Helyezd a styles.css LEGALJÁRA
+========================= */
+
+/* Teljes szélességű sáv a csomagok után */
+#kapcsolat.contact-block{
+  width: 100%;
+  max-width: none;
+  margin: 64px 0 0;
+  padding: clamp(34px, 4vw, 64px) 0;
+  background: linear-gradient(180deg, var(--base-2) 0%, var(--base) 100%);
+  position: relative;
+
+  /* Ne legyen “alsó csík”/keret */
+  border: 0;
+  box-shadow: none;
+}
+
+/* Finom felső elválasztó – maradjon, mert tetszik */
+#kapcsolat.contact-block::before{
+  content:"";
+  position:absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: min(1100px, calc(100% - 32px));
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(200,155,142,.65) 25%,
+    rgba(200,155,142,.30) 50%,
+    rgba(200,155,142,.65) 75%,
+    transparent 100%);
+  opacity: .95;
+}
+
+/* Belső konténer */
+#kapcsolat .contact-inner{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Cím + leírás */
+#kapcsolat #contact-title{
+  margin: 0 0 8px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.25),
+    0 10px 26px rgba(201,155,142,.18);
+}
+
+#kapcsolat .contact-subtitle{
+  margin: 0 0 18px;
+  color: rgba(31, 19, 28, .72);
+  line-height: 1.55;
+}
+
+/* Form kártya */
+#kapcsolat .contact-form{
+  display: grid;
+  gap: 12px;
+  padding: clamp(18px, 2.2vw, 26px);
+  border-radius: 22px;
+
+  background: linear-gradient(180deg, rgba(42,26,47,.96) 0%, rgba(36,16,40,.96) 100%);
+  border: 1px solid rgba(200,155,142,.38);
+  box-shadow: 0 22px 60px rgba(0,0,0,.22);
+
+  position: relative;
+}
+
+/* belső finom fény + dotted “brand” keret */
+#kapcsolat .contact-form::before{
+  content:"";
+  position:absolute;
+  inset: 0;
+  border-radius: 22px;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+#kapcsolat .contact-form::after{
+  content:"";
+  position:absolute;
+  inset: 12px;
+  border-radius: 16px;
+  outline: 2px dotted rgba(200,155,142,.28);
+  pointer-events:none;
+}
+
+/* FONTOS: itt NEM használjuk a globális .form-row flex-et */
+#kapcsolat .contact-form .form-row{
+  display: block;
+}
+
+/* Label + mezők */
+#kapcsolat .contact-form .form-row label{
+  display: block;
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: rgba(239,230,243,.86); /* lavender */
+}
+
+#kapcsolat .contact-form .form-row input,
+#kapcsolat .contact-form .form-row select,
+#kapcsolat .contact-form .form-row textarea{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(200,155,142,.22);
+  background: rgba(251,246,248,.96); /* base-3 */
+  color: var(--ink);
+}
+
+#kapcsolat .contact-form .form-row input::placeholder,
+#kapcsolat .contact-form .form-row textarea::placeholder{
+  color: rgba(31, 19, 28, .55);
+}
+
+/* Focus állapot */
+#kapcsolat .contact-form .form-row input:focus-visible,
+#kapcsolat .contact-form .form-row select:focus-visible,
+#kapcsolat .contact-form .form-row textarea:focus-visible{
+  outline: none;
+  border-color: rgba(200,155,142,.85);
+  box-shadow: 0 0 0 4px rgba(200,155,142,.18);
+}
+
+/* Consent */
+#kapcsolat .form-consent{
+  margin-top: 2px;
+  font-size: 13px;
+  color: rgba(239,230,243,.78);
+}
+#kapcsolat .form-consent input[type="checkbox"]{
+  accent-color: var(--gold);
+}
+
+/* Gomb */
+#kapcsolat .contact-btn{
+  width: 100%;
+  margin-top: 6px;
+  padding: 14px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(239,230,243,.18);
+  background: var(--gold);
+  color: var(--footer-bg);
+  font-weight: 700;
+  letter-spacing: .02em;
+  cursor: pointer;
+  box-shadow: 0 18px 40px rgba(0,0,0,.22);
+}
+#kapcsolat .contact-btn:hover{
+  filter: brightness(1.04);
+}
+
+/* Tipp */
+#kapcsolat .contact-note{
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(239,230,243,.70);
+}
+
+/* Mobil */
+@media (max-width: 900px){
+  #kapcsolat.contact-block{ padding: 28px 0; }
+  #kapcsolat .contact-form{ border-radius: 18px; }
+  #kapcsolat .contact-form::after{ inset: 10px; }
+}
+

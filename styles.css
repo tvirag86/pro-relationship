@@ -939,7 +939,7 @@ h3 {
   color: rgba(255,255,255,.82);
 }
 .btn-form{
-  background: #e9d8c6;
+  background: #f5d0ce;
   color: #2b1731;
   border: 1px solid rgba(255,255,255,.25);
 }
@@ -2132,4 +2132,7 @@ font-style: oblique;
   #kapcsolat .contact-form{ border-radius: 18px; }
   #kapcsolat .contact-form::after{ inset: 10px; }
 }
+
+
+
 
